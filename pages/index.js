@@ -34,9 +34,10 @@ const bounce = keyframes`
 const Basic = styled.div`
   ${basicStyles};
 `
-
-const Combined = styled.div`
-  ${basicStyles};
+const Code = styled.code`
+  bkacground-color: linen;
+`
+const Combined = styled(Basic)`
   ${hoverStyles};
   & code {
     background-color: linen;
@@ -45,8 +46,8 @@ const Combined = styled.div`
 const Animated = styled.div`
   ${basicStyles};
   ${hoverStyles};
-  & code {
-    background-color: linen;
+  & ${Code} {
+    border: 5px solid red;
   }
   animation: ${props => props.animation} 0.2s infinite ease-in-out alternate;
 `
@@ -73,7 +74,7 @@ export default () => {
       <div>
         <Basic>Cool Styles</Basic>
         <Combined>
-          With <code>:hover</code>.
+          With <Code>:hover</Code>.
         </Combined>
         <Animated animation={bounce}>Let's bounce.</Animated>
       </div>
