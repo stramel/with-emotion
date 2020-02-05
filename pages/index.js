@@ -39,7 +39,7 @@ const Code = styled.code`
 `
 const Combined = styled(Basic)`
   ${hoverStyles};
-  & code {
+  & ${Code} {
     background-color: linen;
   }
 `
@@ -76,7 +76,7 @@ export default () => {
         <Combined>
           With <Code>:hover</Code>.
         </Combined>
-        <Animated animation={bounce}>Let's bounce.</Animated>
+        <Animated animation={bounce}>Let's bounce. <Code>Test</Code></Animated>
       </div>
     </React.Fragment>
   )
